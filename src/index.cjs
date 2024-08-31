@@ -6,8 +6,8 @@ app.get("/", (req, res) => {
     res.status(200).send("Hi, this is the root page");
 })
 
-app.get("/*/messages", (req, res) => {
-    res.status(200).send("Hi, these are some messages: <ul><li>Hi</li><li>Hi 2</li></ul>");
+app.get("/:username/messages", (req, res) => {
+    res.status(200).send(`Hi, these are some messages: <ul><li>Hi</li><li>Hi 2</li></ul><p>Your username is ${req.params.username}</p>`);
 })
 
 app.listen(process.env.PORT, () => {
