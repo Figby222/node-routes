@@ -1,6 +1,9 @@
 const express = require("express");
 require("dotenv").config();
 const app = express();
+const cookiesRouter = require("./routes/cookiesRouter.cjs");
+
+app.use("/cookies", cookiesRouter);
 
 app.get("/", (req, res) => {
     res.status(200).send("Hi, this is the root page");
